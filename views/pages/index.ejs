@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header', {currentPage: 'home'}); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Your images</h1>
+            <p><%= tagline %></p>
+            <ul>
+                <% images.forEach(function(image) { %>
+                    <li>
+                        <strong class="text-uppercase"><%= image.title %></strong><br>
+                        <img src = <%= image.url %> /><br>
+                        Date of the image: <%= image.date %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

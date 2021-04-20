@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header', {currentPage: 'add-img'}); %>
+</header>
+
+<main>
+    <form action="/add-img" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" aria-describedby="name" pattern="[A-Za-z0-9_]+" maxlength="10" name="title">
+          <div id="validation" class="form-text">Please type the title of your image.</div>
+        </div>
+        <div class="mb-3">
+            <label for="url-image">Image URL</label>
+            <input class="form-control" type="url" pattern="https://.*" id="url-image" name="url">
+            <p class="no-exist">Esta Imagen ya esta almacenada, no se añadirá</p>
+          </div>
+        <div class="mb-3">
+            <label for="date-img" class="form-label">Year</label>
+            <input class="form-control" type="date" id="date-img" name="date" aria-describedby="date">
+            <div id="date-img" class="form-text">When the img was created.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
