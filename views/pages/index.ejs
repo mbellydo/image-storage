@@ -19,6 +19,7 @@
                         <strong class="text-uppercase"><%= image.title %></strong><br>
                         <img src = <%= image.url %> /><br>
                         Date of the image: <%= image.date %>
+                        <div class="color-section" style="background-color: <%= image.color %>;"><%= image.color %></div>
                     </li>
                 <% }); %>
             </ul>
